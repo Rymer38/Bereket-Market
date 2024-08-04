@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ürünler</h1>
+
+    <!-- Ürün Ekleme -->
+    <div id="product-add">
+        <h2>Ürün Ekle</h2>
+        <input type="text" id="new-product-name" placeholder="Ürün Adı">
+        <input type="number" id="new-product-price" placeholder="Fiyat">
+        <input type="number" id="new-product-profit" placeholder="Kar (TL)">
+        <input type="number" id="new-product-quantity" placeholder="Miktar" value="1">
+        <input type="file" id="new-product-image" accept="image/*">
+        <button onclick="addProduct()">Ürün Ekle</button>
+    </div>
+
+    <!-- Ürün Arama -->
+    <div id="product-search">
+        <input type="text" id="search-products" placeholder="Ürün Ara..." onkeyup="searchProducts()">
+    </div>
+
+    <!-- Ürünler Listesi -->
+    <div id="product-list">
+        <h2>Mevcut Ürünler</h2>
+        <ul id="all-products"></ul>
+    </div>
+
+    <button onclick="window.location.href='index.html'">Ana Sayfaya Dön</button>
+
+    <script src="urunler.js"></script>
+</body>
+</html>

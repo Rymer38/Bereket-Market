@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Yönetim Uygulaması</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Market Yönetim Uygulaması</h1>
+
+    <!-- Ürün Arama ve Sayfalar Arası Geçiş -->
+    <div id="search">
+        <input type="text" id="product-search" placeholder="Ürün Ara..." onkeyup="searchProducts()">
+    </div>
+    <a href="urunler.html" class="navigation-button">Ürünler Sayfası</a>
+
+    <!-- Ürün Satış Kategorileri -->
+    <div id="sales">
+        <h2>Ürün Satışı</h2>
+        <ul>
+            <li>
+                <h3>Nakit Satış</h3>
+                <ul id="cash-sales"></ul>
+            </li>
+            <li>
+                <h3>Kart Satış</h3>
+                <ul id="card-sales"></ul>
+            </li>
+            <li>
+                <h3>Veresiye Satış</h3>
+                <ul id="credit-sales"></ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Gelir-Gider Tablosu -->
+    <div id="finance">
+        <h2>Gelir-Gider Tablosu</h2>
+        <ul>
+            <li>Nakit Gelir: <span id="cash-income">0</span> TL</li>
+            <li>Kart Gelir: <span id="card-income">0</span> TL</li>
+            <li>Veresiye Gelir: <span id="credit-income">0</span> TL</li>
+            <li>Toplam Gelir: <span id="total-income">0</span> TL</li>
+            <li>Toplam Gider: <span id="total-expense">0</span> TL</li>
+            <li>Net Kar: <span id="net-profit">0</span> TL</li>
+        </ul>
+    </div>
+
+    <!-- Toptancı Borçları ve Ödemeleri -->
+    <div id="wholesalers">
+        <h2>Toptancı Borçları</h2>
+        <input type="text" id="wholesaler-name" placeholder="Toptancı Adı">
+        <input type="number" id="wholesaler-debt" placeholder="Borç">
+        <button onclick="addWholesalerDebt()">Borç Ekle</button>
+        <button onclick="increaseWholesalerDebt()">Borç Arttır</button>
+        <button onclick="decreaseWholesalerDebt()">Borç Azalt</button>
+
+        <h3>Mevcut Borçlar</h3>
+        <select id="wholesaler-select"></select>
+        <ul id="wholesaler-debts"></ul>
+    </div>
+
+    <!-- Gün Kaydet -->
+    <div id="save-day">
+        <h2>Gün Kaydet</h2>
+        <button onclick="saveDay()">Günü Kaydet</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
